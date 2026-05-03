@@ -319,6 +319,7 @@
 </footer>
 <script>
 let signupCount = 847;
+  }
 function handleSignup(inputId, formId, successId) {
   const email = document.getElementById(inputId).value.trim();
   if (!email || !email.includes('@')) {
@@ -340,8 +341,7 @@ function handleSignup(inputId, formId, successId) {
   });
   document.getElementById(formId).style.display = 'none';
   document.getElementById(successId).classList.add('show');
-}
-  const email = document.getElementById(inputId).value.trim();
+}  const email = document.getElementById(inputId).value.trim();
   if (!email || !email.includes('@')) {
     const input = document.getElementById(inputId);
     input.style.borderColor = 'var(--red)';
