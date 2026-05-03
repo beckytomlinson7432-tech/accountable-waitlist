@@ -50,8 +50,6 @@
   .join-btn:hover { background: #c8ff6a; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(184,245,90,0.25); }
   .form-note { font-size: 12px; color: var(--muted); animation: fadeUp 0.8s ease 0.4s both; position: relative; z-index: 1; }
   .waitlist-count { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 28px; animation: fadeUp 0.8s ease 0.5s both; position: relative; z-index: 1; }
-  .avatar-stack { display: flex; flex-direction: row-reverse; }
-  .avatar-stack-item { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--black); margin-left: -10px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; font-family: 'Syne', sans-serif; }
   .count-text { font-size: 13px; color: var(--muted2); }
   .count-text strong { color: var(--white); }
   .proof-ticker { width: 100%; overflow: hidden; margin: 60px 0; position: relative; }
@@ -153,7 +151,6 @@
   .reveal-delay-3 { transition-delay: 0.3s; }
   .success-message { display: none; align-items: center; gap: 10px; background: rgba(184,245,90,0.1); border: 1px solid rgba(184,245,90,0.3); border-radius: 14px; padding: 16px 24px; font-size: 15px; color: var(--green); font-weight: 500; max-width: 480px; margin: 0 auto; }
   .success-message.show { display: flex; }
-  .counter-num { display: inline-block; }
   .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 auto; }
 </style>
 </head>
@@ -165,7 +162,7 @@
     <a href="#features" style="color:var(--muted2);text-decoration:none;">Features</a>
     <a href="#pricing" style="color:var(--muted2);text-decoration:none;">Pricing</a>
   </div>
-  <a href="#waitlist" class="nav-cta">Join waitlist →</a>
+  <a href="#waitlist" class="nav-cta">Join waitlist</a>
 </nav>
 <section class="hero" id="waitlist">
   <div class="grid-bg"></div>
@@ -174,14 +171,12 @@
   <p class="hero-sub">Accountable is the social network where your content is your progress. Post proof, build streaks, keep your circle honest.</p>
   <div class="waitlist-form" id="form-1">
     <input type="email" class="email-input" placeholder="your@email.com" id="email-1" />
-    <button class="join-btn" onclick="handleSignup('email-1','form-1','success-1')">Join waitlist →</button>
+    <button class="join-btn" onclick="handleSignup('email-1')">Join waitlist</button>
   </div>
-  <div class="success-message" id="success-1">✓ You're on the list! We'll be in touch soon.</div>
-<p class="form-note">No spam. Just your early access invite when we launch. 🔒</p>
+  <div class="success-message" id="success-1">You are on the list! We will be in touch soon.</div>
+  <p class="form-note">No spam. Just your early access invite when we launch.</p>
   <div class="waitlist-count">
-    <p class="count-text">🚀 Be one of the <strong>first 1,000</strong> to get early access</p>
-  </div>
-    <p class="count-text"><strong><span class="counter-num" data-target="847">0</span> people</strong> already on the waitlist</p>
+    <p class="count-text">Be one of the <strong>first 1,000</strong> to get early access</p>
   </div>
 </section>
 <div class="proof-ticker">
@@ -193,10 +188,10 @@
   <h2 class="section-title reveal reveal-delay-1">Simple. Brutal.<br/>Effective.</h2>
   <p class="section-sub reveal reveal-delay-2">No complicated habit trackers. No gamified nonsense. Just you, your circle, and the proof.</p>
   <div class="how-grid">
-    <div class="how-card reveal"><div class="how-number">01</div><span class="how-icon">🎯</span><div class="how-title">Choose your identity</div><div class="how-desc">Not a goal. An identity. "Become athletic." "Build my business." "Cook not takeaway." You decide who you're becoming.</div></div>
-    <div class="how-card reveal reveal-delay-1"><div class="how-number">02</div><span class="how-icon">👥</span><div class="how-title">Build your circle</div><div class="how-desc">Invite your actual friends — gym mates, housemates, a business partner. Small groups. Real accountability. No strangers.</div></div>
-    <div class="how-card reveal reveal-delay-2"><div class="how-number">03</div><span class="how-icon">📸</span><div class="how-title">Post your proof</div><div class="how-desc">Gym mirror pic. Healthy meal. Running route. Desk setup. Real evidence — not a checkbox. AI verifies every post.</div></div>
-    <div class="how-card reveal reveal-delay-3"><div class="how-number">04</div><span class="how-icon">🔥</span><div class="how-title">Keep the streak alive</div><div class="how-desc">Your circle sees when you post — and when you don't. "You're the only one missing" hits different at 11pm.</div></div>
+    <div class="how-card reveal"><div class="how-number">01</div><span class="how-icon">🎯</span><div class="how-title">Choose your identity</div><div class="how-desc">Not a goal. An identity. Become athletic. Build my business. Cook not takeaway. You decide who you are becoming.</div></div>
+    <div class="how-card reveal reveal-delay-1"><div class="how-number">02</div><span class="how-icon">👥</span><div class="how-title">Build your circle</div><div class="how-desc">Invite your actual friends. Gym mates, housemates, a business partner. Small groups. Real accountability. No strangers.</div></div>
+    <div class="how-card reveal reveal-delay-2"><div class="how-number">03</div><span class="how-icon">📸</span><div class="how-title">Post your proof</div><div class="how-desc">Gym mirror pic. Healthy meal. Running route. Desk setup. Real evidence not a checkbox. AI verifies every post.</div></div>
+    <div class="how-card reveal reveal-delay-3"><div class="how-number">04</div><span class="how-icon">🔥</span><div class="how-title">Keep the streak alive</div><div class="how-desc">Your circle sees when you post and when you do not. You are the only one missing hits different at 11pm.</div></div>
   </div>
 </section>
 <div class="divider"></div>
@@ -205,12 +200,12 @@
     <div>
       <p class="section-eyebrow reveal">Why Accountable</p>
       <h2 class="section-title reveal reveal-delay-1">Built different.<br/>On purpose.</h2>
-      <p class="section-sub reveal reveal-delay-2" style="margin-bottom:36px;">Every other habit app is solo. Accountable is social — but only with people who actually know you.</p>
+      <p class="section-sub reveal reveal-delay-2" style="margin-bottom:36px;">Every other habit app is solo. Accountable is social but only with people who actually know you.</p>
       <div class="feature-list">
         <div class="feature-item reveal"><div class="feature-icon-wrap">🤖</div><div><div class="feature-title">AI verification</div><div class="feature-desc">Every photo is automatically verified. Detected gym equipment, confirmed meal, verified location. No faking it.</div></div></div>
-        <div class="feature-item reveal reveal-delay-1"><div class="feature-icon-wrap">👑</div><div><div class="feature-title">Shared circles with group targets</div><div class="feature-desc">Set a collective goal — "20 workouts this month" — and track everyone's contribution together. Premium feature.</div></div></div>
-        <div class="feature-item reveal reveal-delay-2"><div class="feature-icon-wrap">⚡</div><div><div class="feature-title">Social pressure that actually works</div><div class="feature-desc">"Emma kept her streak. You're the only one missing." Closer to Snapchat streaks than LinkedIn posts.</div></div></div>
-        <div class="feature-item reveal reveal-delay-3"><div class="feature-icon-wrap">✨</div><div><div class="feature-title">Custom identities</div><div class="feature-desc">Can't find your goal in the list? Build your own identity with a custom proof type. Make it yours.</div></div></div>
+        <div class="feature-item reveal reveal-delay-1"><div class="feature-icon-wrap">👑</div><div><div class="feature-title">Shared circles with group targets</div><div class="feature-desc">Set a collective goal and track everyone's contribution together. Premium feature.</div></div></div>
+        <div class="feature-item reveal reveal-delay-2"><div class="feature-icon-wrap">⚡</div><div><div class="feature-title">Social pressure that actually works</div><div class="feature-desc">Emma kept her streak. You are the only one missing. Closer to Snapchat streaks than LinkedIn posts.</div></div></div>
+        <div class="feature-item reveal reveal-delay-3"><div class="feature-icon-wrap">✨</div><div><div class="feature-title">Custom identities</div><div class="feature-desc">Cannot find your goal in the list? Build your own identity with a custom proof type. Make it yours.</div></div></div>
       </div>
     </div>
     <div class="phone-mockup reveal reveal-delay-2">
@@ -220,15 +215,15 @@
           <div class="fake-header"><div class="fake-logo">Accountable<span>.</span></div><div class="fake-streak">🔥 14 days</div></div>
           <div class="fake-card">
             <div class="fake-card-top"><div style="width:26px;height:26px;border-radius:50%;background:#0d1f33;color:#4d9fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">E</div><div><div class="fake-name">Emma</div><div class="fake-goal-label">Become athletic</div></div></div>
-            <div class="fake-image" style="background:linear-gradient(135deg,#0d1f33,#1a0a2e);position:relative;">🏋️<div class="fake-verify-badge">✓ AI Verified</div></div>
+            <div class="fake-image" style="background:linear-gradient(135deg,#0d1f33,#1a0a2e);position:relative;">🏋️<div class="fake-verify-badge">AI Verified</div></div>
             <div class="fake-footer"><div class="fake-reaction">🔥 8</div><div class="fake-reaction">💪 5</div><div class="fake-reaction">❤️ 3</div></div>
           </div>
           <div class="fake-card">
             <div class="fake-card-top"><div style="width:26px;height:26px;border-radius:50%;background:#2a1200;color:#ff8c4d;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">J</div><div><div class="fake-name">Jake</div><div class="fake-goal-label">No alcohol month</div></div></div>
-            <div class="fake-image" style="background:linear-gradient(135deg,#0a1f0a,#1a2d0d);position:relative;">🥗<div class="fake-verify-badge">✓ AI Verified</div></div>
+            <div class="fake-image" style="background:linear-gradient(135deg,#0a1f0a,#1a2d0d);position:relative;">🥗<div class="fake-verify-badge">AI Verified</div></div>
             <div class="fake-footer"><div class="fake-reaction">🔥 4</div><div class="fake-reaction">❤️ 7</div></div>
           </div>
-          <div style="margin:6px 4px;background:rgba(255,77,77,0.08);border:1px solid rgba(255,77,77,0.2);border-radius:10px;padding:10px 12px;font-size:11px;color:#ff8080;text-align:center;">⚠️ You're the only one who hasn't posted today</div>
+          <div style="margin:6px 4px;background:rgba(255,77,77,0.08);border:1px solid rgba(255,77,77,0.2);border-radius:10px;padding:10px 12px;font-size:11px;color:#ff8080;text-align:center;">You are the only one who has not posted today</div>
         </div>
       </div>
       <div style="position:absolute;inset:-40px;background:radial-gradient(ellipse at center,rgba(184,245,90,0.07),transparent 70%);pointer-events:none;z-index:-1;"></div>
@@ -243,7 +238,7 @@
     <div class="stat-box reveal"><div class="stat-number">65%</div><div class="stat-label">Higher goal achievement with social accountability vs going solo</div></div>
     <div class="stat-box reveal reveal-delay-1"><div class="stat-number">3x</div><div class="stat-label">More likely to keep a habit when your friends can see your progress</div></div>
     <div class="stat-box reveal reveal-delay-2"><div class="stat-number">21d</div><div class="stat-label">Average streak length for users with an active accountability circle</div></div>
-    <div class="stat-box reveal reveal-delay-3"><div class="stat-number">£0</div><div class="stat-label">Cost to get started. Free tier forever, upgrade when you're ready.</div></div>
+    <div class="stat-box reveal reveal-delay-3"><div class="stat-number">£0</div><div class="stat-label">Cost to get started. Free tier forever, upgrade when you are ready.</div></div>
   </div>
 </section>
 <div class="divider"></div>
@@ -268,7 +263,7 @@
           <li class="locked">Custom identities</li>
           <li class="locked">Streak protection</li>
         </ul>
-        <button class="plan-btn free" onclick="document.getElementById('email-1').focus();window.scrollTo({top:0,behavior:'smooth'})">Join waitlist →</button>
+        <button class="plan-btn free" onclick="document.getElementById('email-1').focus();window.scrollTo({top:0,behavior:'smooth'})">Join waitlist</button>
       </div>
       <div class="pricing-card featured reveal reveal-delay-1">
         <div class="plan-badge">MOST POPULAR</div>
@@ -277,107 +272,91 @@
         <div class="plan-desc">For serious accountability. Everything in Free, plus:</div>
         <ul class="plan-features">
           <li>Unlimited circles</li>
-          <li>Shared group targets + leaderboard</li>
+          <li>Shared group targets and leaderboard</li>
           <li>Circle chat for your group</li>
           <li>Custom identity creator</li>
           <li>Advanced AI verification</li>
-          <li>Streak protection (1x/month)</li>
+          <li>Streak protection once per month</li>
           <li>Group progress tracking</li>
           <li>Early access to new features</li>
         </ul>
-        <button class="plan-btn premium-btn" onclick="document.getElementById('email-1').focus();window.scrollTo({top:0,behavior:'smooth'})">Get early access →</button>
+        <button class="plan-btn premium-btn" onclick="document.getElementById('email-1').focus();window.scrollTo({top:0,behavior:'smooth'})">Get early access</button>
       </div>
     </div>
-    <p style="text-align:center;font-size:13px;color:var(--muted2);margin-top:20px;">Cancel anytime. No long-term commitment. Annual plan available at launch (save 37%).</p>
+    <p style="text-align:center;font-size:13px;color:var(--muted2);margin-top:20px;">Cancel anytime. No long-term commitment. Annual plan available at launch.</p>
   </div>
 </section>
 <div class="divider"></div>
 <section>
   <p class="section-eyebrow reveal" style="text-align:center;">Early feedback</p>
-  <p class="section-eyebrow reveal" style="text-align:center;margin-bottom:8px;">Early reactions to the concept</p>
   <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">What people<br/>are saying.</h2>
+  <p class="section-eyebrow reveal" style="text-align:center;margin-bottom:8px;">Early reactions to the concept</p>
   <div class="testimonials">
-    <div class="testimonial reveal"><div class="t-stars">★★★★★</div><p class="t-quote">"I've tried every habit app. The difference with Accountable is my friends can actually see when I haven't posted. That social pressure is real."</p><div class="t-author"><div class="t-avatar" style="background:#0d1f33;color:#4d9fff;">E</div><div><div class="t-name">Emma R.</div><div class="t-handle">Gym Squad · 15 day streak</div></div></div></div>
-    <div class="testimonial reveal reveal-delay-1"><div class="t-stars">★★★★★</div><p class="t-quote">"The shared circle target completely changed our dynamic. We went from chatting about going to the gym to actually going. Every single day."</p><div class="t-author"><div class="t-avatar" style="background:#2a0017;color:#ff4d9f;">S</div><div><div class="t-name">Sofia M.</div><div class="t-handle">Summer Shred Squad · 21 day streak</div></div></div></div>
-    <div class="testimonial reveal reveal-delay-2"><div class="t-stars">★★★★★</div><p class="t-quote">"I set up a Founder Grind circle with my business partner. Shipping something every single day felt impossible alone. Together it's just what we do now."</p><div class="t-author"><div class="t-avatar" style="background:#1a0020;color:#a04dff;">R</div><div><div class="t-name">Ryan T.</div><div class="t-handle">Founder Grind · 34 day streak</div></div></div></div>
+    <div class="testimonial reveal"><div class="t-stars">★★★★★</div><p class="t-quote">I have tried every habit app. The difference with Accountable is my friends can actually see when I have not posted. That social pressure is real.</p><div class="t-author"><div class="t-avatar" style="background:#0d1f33;color:#4d9fff;">E</div><div><div class="t-name">Emma R.</div><div class="t-handle">Gym Squad</div></div></div></div>
+    <div class="testimonial reveal reveal-delay-1"><div class="t-stars">★★★★★</div><p class="t-quote">The shared circle target completely changed our dynamic. We went from chatting about going to the gym to actually going. Every single day.</p><div class="t-author"><div class="t-avatar" style="background:#2a0017;color:#ff4d9f;">S</div><div><div class="t-name">Sofia M.</div><div class="t-handle">Summer Shred Squad</div></div></div></div>
+    <div class="testimonial reveal reveal-delay-2"><div class="t-stars">★★★★★</div><p class="t-quote">I set up a circle with my business partner. Shipping something every single day felt impossible alone. Together it is just what we do now.</p><div class="t-author"><div class="t-avatar" style="background:#1a0020;color:#a04dff;">R</div><div><div class="t-name">Ryan T.</div><div class="t-handle">Founder Grind</div></div></div></div>
   </div>
 </section>
 <div class="divider"></div>
 <div class="final-cta">
   <h2>Your friends are<br/>already <span class="green">posting proof.</span></h2>
-  <p>Don't be the only one missing today.</p>
+  <p>Do not be the only one missing today.</p>
   <div class="final-form" id="form-2">
     <input type="email" class="email-input" placeholder="your@email.com" id="email-2" />
-    <button class="join-btn" onclick="handleSignup('email-2','form-2','success-2')">Join →</button>
+    <button class="join-btn" onclick="handleSignup('email-2')">Join</button>
   </div>
-  <div class="success-message" id="success-2">✓ You're on the list! We'll be in touch soon.</div>
+  <div class="success-message" id="success-2">You are on the list! We will be in touch soon.</div>
 </div>
 <footer>
   <a href="#" class="logo" style="font-size:16px;">Accountable<span style="color:var(--green);">.</span></a>
-  <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Contact</a><a href="#">TikTok</a></div>
-  <p style="color:var(--muted);">© 2025 Accountable. All rights reserved.</p>
+  <div class="footer-links"><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms</a><a href="#">Contact</a></div>
+  <p style="color:var(--muted);">2025 Accountable. All rights reserved.</p>
 </footer>
 <script>
-let signupCount = 847;
-  }
-  function handleSignup(inputId, formId, successId) {
-  const email = document.getElementById(inputId).value.trim();
-  if (!email || !email.includes('@')) {
-    const input = document.getElementById(inputId);
-    input.style.borderColor = 'var(--red)';
+function handleSignup(inputId) {
+  var email = document.getElementById(inputId).value.trim();
+  if (!email || email.indexOf('@') === -1) {
+    var input = document.getElementById(inputId);
+    input.style.borderColor = '#ff4d4d';
     input.placeholder = 'Please enter a valid email';
-    setTimeout(() => {
+    setTimeout(function() {
       input.style.borderColor = '';
       input.placeholder = 'your@email.com';
     }, 2000);
     return;
   }
-  const url = 'https://us19.list-manage.com/subscribe?u=6fd097f7093a0db7ebc018c91&id=700f3abb95&EMAIL=' + encodeURIComponent(email);
+  var url = 'https://us19.list-manage.com/subscribe?u=6fd097f7093a0db7ebc018c91&id=700f3abb95&EMAIL=' + encodeURIComponent(email);
   window.location.href = url;
 }
-function animateCounter(el, target) {
-  const start = parseInt(el.textContent) || 0;
-  const duration = 1200;
-  const startTime = performance.now();
-  function update(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(start + (target - start) * eased);
-    if (progress < 1) requestAnimationFrame(update);
-  }
-  requestAnimationFrame(update);
-}
-window.addEventListener('load', () => {
-  setTimeout(() => { document.querySelectorAll('.counter-num').forEach(el => animateCounter(el, parseInt(el.dataset.target))); }, 800);
-});
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
 }, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-const tickerItems = [
-  { initial:'E', color:'#4d9fff', bg:'#0d1f33', name:'Emma', action:'posted gym proof', badge:'✓ Verified', streak:'🔥 15d' },
-  { initial:'J', color:'#ff8c4d', bg:'#2a1200', name:'Jake', action:'checked in · meal photo', badge:'✓ Verified', streak:'🔥 9d' },
-  { initial:'S', color:'#ff4d9f', bg:'#2a0017', name:'Sofia', action:'completed morning run', badge:'✓ Verified', streak:'🔥 21d' },
-  { initial:'M', color:'#b8f55a', bg:'#0d1a00', name:'Marcus', action:'shipped a product feature', badge:'✓ Verified', streak:'🔥 7d' },
-  { initial:'R', color:'#a04dff', bg:'#1a0020', name:'Rachel', action:'no-spend day logged', badge:'✓ Verified', streak:'🔥 34d' },
-  { initial:'T', color:'#4dffd6', bg:'#002a20', name:'Tom', action:'posted study desk photo', badge:'✓ Verified', streak:'🔥 12d' },
-  { initial:'A', color:'#fff44d', bg:'#2a2a00', name:'Anna', action:'healthy meal logged', badge:'✓ Verified', streak:'🔥 5d' },
-  { initial:'K', color:'#ff6b6b', bg:'#2a0000', name:'Kira', action:'morning workout complete', badge:'✓ Verified', streak:'🔥 18d' },
+document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
+var tickerItems = [
+  { initial:'E', color:'#4d9fff', bg:'#0d1f33', name:'Emma', action:'posted gym proof', streak:'🔥 15d' },
+  { initial:'J', color:'#ff8c4d', bg:'#2a1200', name:'Jake', action:'checked in meal photo', streak:'🔥 9d' },
+  { initial:'S', color:'#ff4d9f', bg:'#2a0017', name:'Sofia', action:'completed morning run', streak:'🔥 21d' },
+  { initial:'M', color:'#b8f55a', bg:'#0d1a00', name:'Marcus', action:'shipped a product feature', streak:'🔥 7d' },
+  { initial:'R', color:'#a04dff', bg:'#1a0020', name:'Rachel', action:'no spend day logged', streak:'🔥 34d' },
+  { initial:'T', color:'#4dffd6', bg:'#002a20', name:'Tom', action:'posted study desk photo', streak:'🔥 12d' },
+  { initial:'A', color:'#fff44d', bg:'#2a2a00', name:'Anna', action:'healthy meal logged', streak:'🔥 5d' },
+  { initial:'K', color:'#ff6b6b', bg:'#2a0000', name:'Kira', action:'morning workout complete', streak:'🔥 18d' },
 ];
 function buildTicker() {
-  const track = document.getElementById('ticker');
-  [...tickerItems, ...tickerItems].forEach(item => {
-    const div = document.createElement('div');
+  var track = document.getElementById('ticker');
+  tickerItems.concat(tickerItems).forEach(function(item) {
+    var div = document.createElement('div');
     div.className = 'ticker-item';
-    div.innerHTML = `<div style="width:28px;height:28px;border-radius:50%;background:${item.bg};color:${item.color};display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">${item.initial}</div><div class="t-text"><strong style="color:#f0ede6;font-weight:600;">${item.name}</strong> ${item.action}</div><div class="t-badge">${item.badge}</div><div style="font-size:12px;font-weight:700;color:#ffb800;">${item.streak}</div>`;
+    div.innerHTML = '<div style="width:28px;height:28px;border-radius:50%;background:' + item.bg + ';color:' + item.color + ';display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">' + item.initial + '</div><div class="t-text"><strong style="color:#f0ede6;font-weight:600;">' + item.name + '</strong> ' + item.action + '</div><div class="t-badge">Verified</div><div style="font-size:12px;font-weight:700;color:#ffb800;">' + item.streak + '</div>';
     track.appendChild(div);
   });
 }
 buildTicker();
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var target = document.querySelector(a.getAttribute('href'));
     if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
