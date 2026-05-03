@@ -325,6 +325,27 @@ function handleSignup(inputId, formId, successId) {
     const input = document.getElementById(inputId);
     input.style.borderColor = 'var(--red)';
     input.placeholder = 'Please enter a valid email';
+    setTimeout(() => {
+      input.style.borderColor = '';
+      input.placeholder = 'your@email.com';
+    }, 2000);
+    return;
+  }
+  const url = 'https://joinaccountable.us19.list-manage.com/subscribe/post?u=6fd097f7093a0db7ebc018c91&id=700f3abb95&f_id=00b2c2e1f0';
+  fetch(url, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `EMAIL=${encodeURIComponent(email)}&b_6fd097f7093a0db7ebc018c91_700f3abb95=`
+  });
+  document.getElementById(formId).style.display = 'none';
+  document.getElementById(successId).classList.add('show');
+}
+  const email = document.getElementById(inputId).value.trim();
+  if (!email || !email.includes('@')) {
+    const input = document.getElementById(inputId);
+    input.style.borderColor = 'var(--red)';
+    input.placeholder = 'Please enter a valid email';
     setTimeout(() => { input.style.borderColor = ''; input.placeholder = 'your@email.com'; }, 2000);
     return;
   }
