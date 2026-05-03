@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Accountable. — Stop making excuses. Start making proof.</title>
+<meta name="description" content="The social network where your content is your progress. Post proof, not promises. Join the waitlist." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --black: #0a0a0a;
+    --card: #141414;
+    --card2: #1c1c1c;
+    --border: #222;
+    --green: #b8f55a;
+    --green-dim: #8abf3f;
+    --green-dark: #0d1a00;
+    --white: #f0ede6;
+    --muted: #555;
+    --muted2: #888;
+    --amber: #ffb800;
+    --red: #ff4d4d;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; cursor: default; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E"); opacity: 0.025; pointer-events: none; z-index: 1000; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; background: rgba(10,10,10,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+  .logo { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -0.5px; color: var(--white); text-decoration: none; }
+  .logo span { color: var(--green); }
+  .nav-cta { background: var(--green); color: var(--black); border: none; border-radius: 10px; padding: 10px 20px; font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+  .nav-cta:hover { background: #c8ff6a; transform: translateY(-1px); }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; background: radial-gradient(circle, rgba(184,245,90,0.07) 0%, transparent 70%); pointer-events: none; }
+  .grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(184,245,90,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(184,245,90,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(184,245,90,0.08); border: 1px solid rgba(184,245,90,0.2); border-radius: 30px; padding: 8px 18px; font-size: 13px; font-weight: 600; color: var(--green); margin-bottom: 32px; letter-spacing: 0.3px; animation: fadeUp 0.8s ease both; }
+  .pulse-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulseDot 2s infinite; }
+  @keyframes pulseDot { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+  h1 { font-family: 'Syne', sans-serif; font-size: clamp(44px, 8vw, 88px); font-weight: 800; line-height: 1.0; letter-spacing: -2px; color: var(--white); margin-bottom: 12px; animation: fadeUp 0.8s ease 0.1s both; position: relative; z-index: 1; }
+  h1 .green { color: var(--green); }
+  h1 .dim { color: var(--muted2); }
+  .hero-sub { font-size: clamp(17px, 2.5vw, 22px); color: var(--muted2); max-width: 560px; line-height: 1.55; margin: 20px auto 48px; font-weight: 400; animation: fadeUp 0.8s ease 0.2s both; position: relative; z-index: 1; }
+  .waitlist-form { display: flex; gap: 10px; max-width: 480px; width: 100%; margin: 0 auto 20px; animation: fadeUp 0.8s ease 0.3s both; position: relative; z-index: 1; }
+  .email-input { flex: 1; background: var(--card); border: 1.5px solid var(--border); border-radius: 14px; padding: 16px 20px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--white); outline: none; transition: border-color 0.2s; min-width: 0; }
+  .email-input:focus { border-color: var(--green); }
+  .email-input::placeholder { color: var(--muted); }
+  .join-btn { background: var(--green); color: var(--black); border: none; border-radius: 14px; padding: 16px 28px; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; cursor: pointer; white-space: nowrap; transition: all 0.2s; position: relative; overflow: hidden; }
+  .join-btn:hover { background: #c8ff6a; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(184,245,90,0.25); }
+  .form-note { font-size: 12px; color: var(--muted); animation: fadeUp 0.8s ease 0.4s both; position: relative; z-index: 1; }
+  .waitlist-count { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 28px; animation: fadeUp 0.8s ease 0.5s both; position: relative; z-index: 1; }
+  .avatar-stack { display: flex; flex-direction: row-reverse; }
+  .avatar-stack-item { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--black); margin-left: -10px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; font-family: 'Syne', sans-serif; }
+  .count-text { font-size: 13px; color: var(--muted2); }
+  .count-text strong { color: var(--white); }
+  .proof-ticker { width: 100%; overflow: hidden; margin: 60px 0; position: relative; }
+  .proof-ticker::before, .proof-ticker::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
+  .proof-ticker::before { left: 0; background: linear-gradient(90deg, var(--black), transparent); }
+  .proof-ticker::after { right: 0; background: linear-gradient(-90deg, var(--black), transparent); }
+  .ticker-track { display: flex; gap: 12px; animation: ticker 28s linear infinite; width: max-content; }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker-item { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 12px 18px; white-space: nowrap; flex-shrink: 0; }
+  .ticker-item .t-text { font-size: 13px; color: var(--white); }
+  .ticker-item .t-badge { font-size: 11px; font-weight: 700; color: var(--green); background: rgba(184,245,90,0.1); border: 1px solid rgba(184,245,90,0.2); border-radius: 8px; padding: 2px 8px; }
+  section { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+  .section-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+  .section-title { font-family: 'Syne', sans-serif; font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; color: var(--white); margin-bottom: 20px; }
+  .section-sub { font-size: 18px; color: var(--muted2); line-height: 1.6; max-width: 540px; }
+  .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 56px; }
+  .how-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; }
+  .how-card:hover { border-color: rgba(184,245,90,0.3); transform: translateY(-3px); }
+  .how-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--green), transparent); opacity: 0; transition: opacity 0.3s; }
+  .how-card:hover::before { opacity: 1; }
+  .how-number { font-family: 'Syne', sans-serif; font-size: 56px; font-weight: 800; color: rgba(184,245,90,0.08); line-height: 1; margin-bottom: 16px; letter-spacing: -2px; }
+  .how-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+  .how-title { font-family: 'Syne', sans-serif; font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+  .how-desc { font-size: 14px; color: var(--muted2); line-height: 1.6; }
+  .features-split { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 20px; }
+  @media (max-width: 768px) { .features-split { grid-template-columns: 1fr; gap: 40px; } .waitlist-form { flex-direction: column; } nav { padding: 16px 20px; } .nav-links { display: none; } }
+  .feature-list { display: flex; flex-direction: column; gap: 12px; }
+  .feature-item { display: flex; align-items: flex-start; gap: 16px; padding: 20px; background: var(--card); border: 1px solid var(--border); border-radius: 16px; transition: all 0.25s; }
+  .feature-item:hover { border-color: rgba(184,245,90,0.25); background: rgba(184,245,90,0.03); }
+  .feature-icon-wrap { width: 44px; height: 44px; border-radius: 12px; background: rgba(184,245,90,0.08); border: 1px solid rgba(184,245,90,0.15); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .feature-title { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .feature-desc { font-size: 13px; color: var(--muted2); line-height: 1.5; }
+  .phone-mockup { position: relative; display: flex; justify-content: center; }
+  .phone-frame { width: 260px; background: var(--card); border: 2px solid #333; border-radius: 40px; padding: 16px 12px; position: relative; box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px #111 inset; }
+  .phone-notch { width: 80px; height: 22px; background: var(--black); border-radius: 0 0 16px 16px; margin: 0 auto 8px; }
+  .phone-screen { background: var(--black); border-radius: 28px; overflow: hidden; min-height: 440px; padding: 8px; }
+  .fake-header { display: flex; justify-content: space-between; align-items: center; padding: 8px 8px 12px; }
+  .fake-logo { font-family: 'Syne',sans-serif; font-size: 14px; font-weight: 800; color: var(--white); }
+  .fake-logo span { color: var(--green); }
+  .fake-streak { font-size: 11px; font-weight: 700; color: var(--green); background: rgba(184,245,90,0.1); border: 1px solid rgba(184,245,90,0.2); border-radius: 12px; padding: 3px 8px; }
+  .fake-card { background: var(--card2); border: 1px solid #2a2a2a; border-radius: 14px; margin-bottom: 8px; overflow: hidden; }
+  .fake-card-top { display: flex; align-items: center; gap: 8px; padding: 10px; }
+  .fake-name { font-size: 11px; font-weight: 600; color: var(--white); }
+  .fake-goal-label { font-size: 10px; color: var(--muted2); }
+  .fake-image { height: 90px; display: flex; align-items: center; justify-content: center; font-size: 30px; position: relative; }
+  .fake-verify-badge { position: absolute; top: 6px; right: 6px; background: rgba(184,245,90,0.9); color: #000; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 8px; }
+  .fake-footer { padding: 6px 10px; display: flex; gap: 6px; }
+  .fake-reaction { background: #222; border-radius: 10px; padding: 3px 8px; font-size: 11px; color: var(--white); }
+  .premium-section { background: linear-gradient(135deg, #0f1000, #0a0a0a); border-top: 1px solid rgba(184,245,90,0.1); border-bottom: 1px solid rgba(184,245,90,0.1); }
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+  @media (max-width: 600px) { .pricing-grid { grid-template-columns: 1fr; } .features-split { grid-template-columns: 1fr; } h1 { letter-spacing: -1px; } }
+  .pricing-card { background: var(--card); border: 1px solid var(--border); border-radius: 22px; padding: 32px; position: relative; overflow: hidden; transition: transform 0.2s; }
+  .pricing-card:hover { transform: translateY(-4px); }
+  .pricing-card.featured { background: linear-gradient(160deg, #1a1f00, #111800); border-color: rgba(184,245,90,0.3); box-shadow: 0 0 40px rgba(184,245,90,0.06); }
+  .pricing-card.featured::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--green), transparent); }
+  .plan-badge { display: inline-block; background: var(--green); color: var(--black); font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 20px; margin-bottom: 16px; font-family: 'Syne', sans-serif; letter-spacing: 0.5px; }
+  .plan-name { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+  .plan-price { font-family: 'Syne', sans-serif; font-size: 40px; font-weight: 800; color: var(--white); letter-spacing: -1px; margin-bottom: 4px; }
+  .plan-price span { font-size: 18px; font-weight: 500; color: var(--muted2); }
+  .plan-desc { font-size: 13px; color: var(--muted2); margin-bottom: 28px; }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+  .plan-features li { font-size: 14px; color: var(--muted2); display: flex; align-items: center; gap: 10px; }
+  .plan-features li::before { content: '✓'; color: var(--green); font-weight: 700; font-size: 14px; flex-shrink: 0; }
+  .plan-features li.locked { color: var(--muted); }
+  .plan-features li.locked::before { content: '—'; color: var(--muted); }
+  .plan-btn { width: 100%; padding: 14px; border-radius: 14px; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; cursor: pointer; transition: all 0.2s; border: none; }
+  .plan-btn.free { background: var(--card2); color: var(--white); border: 1px solid var(--border); }
+  .plan-btn.premium-btn { background: var(--green); color: var(--black); }
+  .plan-btn.premium-btn:hover { background: #c8ff6a; transform: translateY(-1px); }
+  .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 48px; }
+  .testimonial { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 28px; transition: all 0.25s; }
+  .testimonial:hover { border-color: rgba(184,245,90,0.2); transform: translateY(-2px); }
+  .t-stars { color: var(--green); font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
+  .t-quote { font-size: 15px; color: var(--white); line-height: 1.6; margin-bottom: 20px; font-style: italic; }
+  .t-author { display: flex; align-items: center; gap: 12px; }
+  .t-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; font-family: 'Syne', sans-serif; }
+  .t-name { font-size: 14px; font-weight: 600; color: var(--white); }
+  .t-handle { font-size: 12px; color: var(--muted2); }
+  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 56px; text-align: center; }
+  .stat-box { padding: 36px 20px; background: var(--card); border: 1px solid var(--border); border-radius: 20px; transition: all 0.25s; }
+  .stat-box:hover { border-color: rgba(184,245,90,0.25); }
+  .stat-number { font-family: 'Syne', sans-serif; font-size: 44px; font-weight: 800; color: var(--green); letter-spacing: -2px; line-height: 1; margin-bottom: 8px; }
+  .stat-label { font-size: 13px; color: var(--muted2); }
+  .final-cta { text-align: center; padding: 100px 24px; position: relative; overflow: hidden; }
+  .final-cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(184,245,90,0.06) 0%, transparent 70%); pointer-events: none; }
+  .final-cta h2 { font-family: 'Syne', sans-serif; font-size: clamp(36px, 6vw, 68px); font-weight: 800; line-height: 1.05; letter-spacing: -2px; color: var(--white); margin-bottom: 20px; position: relative; z-index: 1; }
+  .final-cta h2 .green { color: var(--green); }
+  .final-cta p { font-size: 18px; color: var(--muted2); margin-bottom: 44px; position: relative; z-index: 1; }
+  .final-form { max-width: 440px; margin: 0 auto; display: flex; gap: 10px; position: relative; z-index: 1; }
+  footer { border-top: 1px solid var(--border); padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted2); flex-wrap: wrap; gap: 12px; }
+  footer a { color: var(--muted2); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--green); }
+  .footer-links { display: flex; gap: 24px; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .success-message { display: none; align-items: center; gap: 10px; background: rgba(184,245,90,0.1); border: 1px solid rgba(184,245,90,0.3); border-radius: 14px; padding: 16px 24px; font-size: 15px; color: var(--green); font-weight: 500; max-width: 480px; margin: 0 auto; }
+  .success-message.show { display: flex; }
+  .counter-num { display: inline-block; }
+  .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 auto; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo">Accountable<span>.</span></a>
+  <div class="nav-links" style="display:flex;gap:32px;font-size:14px;">
+    <a href="#how" style="color:var(--muted2);text-decoration:none;">How it works</a>
+    <a href="#features" style="color:var(--muted2);text-decoration:none;">Features</a>
+    <a href="#pricing" style="color:var(--muted2);text-decoration:none;">Pricing</a>
+  </div>
+  <a href="#waitlist" class="nav-cta">Join waitlist →</a>
+</nav>
+<section class="hero" id="waitlist">
+  <div class="grid-bg"></div>
+  <div class="hero-eyebrow"><div class="pulse-dot"></div>Now accepting early access signups</div>
+  <h1>Stop making<br/><span class="green">excuses.</span><br/><span class="dim">Start making proof.</span></h1>
+  <p class="hero-sub">Accountable is the social network where your content is your progress. Post proof, build streaks, keep your circle honest.</p>
+  <div class="waitlist-form" id="form-1">
+    <input type="email" class="email-input" placeholder="your@email.com" id="email-1" />
+    <button class="join-btn" onclick="handleSignup('email-1','form-1','success-1')">Join waitlist →</button>
+  </div>
+  <div class="success-message" id="success-1">✓ You're on the list! We'll be in touch soon.</div>
+  <p class="form-note">No spam. Just your early access invite when we launch. 🔒</p>
+  <div class="waitlist-count">
+    <div class="avatar-stack">
+      <div class="avatar-stack-item" style="background:#0d1f33;color:#4d9fff;">E</div>
+      <div class="avatar-stack-item" style="background:#2a1200;color:#ff8c4d;">J</div>
+      <div class="avatar-stack-item" style="background:#2a0017;color:#ff4d9f;">S</div>
+      <div class="avatar-stack-item" style="background:#0d1a00;color:#b8f55a;">M</div>
+    </div>
+    <p class="count-text"><strong><span class="counter-num" data-target="847">0</span> people</strong> already on the waitlist</p>
+  </div>
+</section>
+<div class="proof-ticker">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+<div class="divider"></div>
+<section id="how">
+  <p class="section-eyebrow reveal">How it works</p>
+  <h2 class="section-title reveal reveal-delay-1">Simple. Brutal.<br/>Effective.</h2>
+  <p class="section-sub reveal reveal-delay-2">No complicated habit trackers. No gamified nonsense. Just you, your circle, and the proof.</p>
+  <div class="how-grid">
+    <div class="how-card reveal"><div class="how-number">01</div><span class="how-icon">🎯</span><div class="how-title">Choose your identity</div><div class="how-desc">Not a goal. An identity. "Become athletic." "Build my business." "Cook not takeaway." You decide who you're becoming.</div></div>
+    <div class="how-card reveal reveal-delay-1"><div class="how-number">02</div><span class="how-icon">👥</span><div class="how-title">Build your circle</div><div class="how-desc">Invite your actual friends — gym mates, housemates, a business partner. Small groups. Real accountability. No strangers.</div></div>
+    <div class="how-card reveal reveal-delay-2"><div class="how-number">03</div><span class="how-icon">📸</span><div class="how-title">Post your proof</div><div class="how-desc">Gym mirror pic. Healthy meal. Running route. Desk setup. Real evidence — not a checkbox. AI verifies every post.</div></div>
+    <div class="how-card reveal reveal-delay-3"><div class="how-number">04</div><span class="how-icon">🔥</span><div class="how-title">Keep the streak alive</div><div class="how-desc">Your circle sees when you post — and when you don't. "You're the only one missing" hits different at 11pm.</div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="features">
+  <div class="features-split">
+    <div>
+      <p class="section-eyebrow reveal">Why Accountable</p>
+      <h2 class="section-title reveal reveal-delay-1">Built different.<br/>On purpose.</h2>
+      <p class="section-sub reveal reveal-delay-2" style="margin-bottom:36px;">Every other habit app is solo. Accountable is social — but only with people who actually know you.</p>
+      <div class="feature-list">
+        <div class="feature-item reveal"><div class="feature-icon-wrap">🤖</div><div><div class="feature-title">AI verification</div><div class="feature-desc">Every photo is automatically verified. Detected gym equipment, confirmed meal, verified location. No faking it.</div></div></div>
+        <div class="feature-item reveal reveal-delay-1"><div class="feature-icon-wrap">👑</div><div><div class="feature-title">Shared circles with group targets</div><div class="feature-desc">Set a collective goal — "20 workouts this month" — and track everyone's contribution together. Premium feature.</div></div></div>
+        <div class="feature-item reveal reveal-delay-2"><div class="feature-icon-wrap">⚡</div><div><div class="feature-title">Social pressure that actually works</div><div class="feature-desc">"Emma kept her streak. You're the only one missing." Closer to Snapchat streaks than LinkedIn posts.</div></div></div>
+        <div class="feature-item reveal reveal-delay-3"><div class="feature-icon-wrap">✨</div><div><div class="feature-title">Custom identities</div><div class="feature-desc">Can't find your goal in the list? Build your own identity with a custom proof type. Make it yours.</div></div></div>
+      </div>
+    </div>
+    <div class="phone-mockup reveal reveal-delay-2">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="fake-header"><div class="fake-logo">Accountable<span>.</span></div><div class="fake-streak">🔥 14 days</div></div>
+          <div class="fake-card">
+            <div class="fake-card-top"><div style="width:26px;height:26px;border-radius:50%;background:#0d1f33;color:#4d9fff;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">E</div><div><div class="fake-name">Emma</div><div class="fake-goal-label">Become athletic</div></div></div>
+            <div class="fake-image" style="background:linear-gradient(135deg,#0d1f33,#1a0a2e);position:relative;">🏋️<div class="fake-verify-badge">✓ AI Verified</div></div>
+            <div class="fake-footer"><div class="fake-reaction">🔥 8</div><div class="fake-reaction">💪 5</div><div class="fake-reaction">❤️ 3</div></div>
+          </div>
+          <div class="fake-card">
+            <div class="fake-card-top"><div style="width:26px;height:26px;border-radius:50%;background:#2a1200;color:#ff8c4d;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;">J</div><div><div class="fake-name">Jake</div><div class="fake-goal-label">No alcohol month</div></div></div>
+            <div class="fake-image" style="background:linear-gradient(135deg,#0a1f0a,#1a2d0d);position:relative;">🥗<div class="fake-verify-badge">✓ AI Verified</div></div>
+            <div class="fake-footer"><div class="fake-reaction">🔥 4</div><div class="fake-reaction">❤️ 7</div></div>
+          </div>
+          <div style="margin:6px 4px;background:rgba(255,77,77,0.08);border:1px solid rgba(255,77,77,0.2);border-radius:10px;padding:10px 12px;font-size:11px;color:#ff8080;text-align:center;">⚠️ You're the only one who hasn't posted today</div>
+        </div>
+      </div>
+      <div style="position:absolute;inset:-40px;background:radial-gradient(ellipse at center,rgba(184,245,90,0.07),transparent 70%);pointer-events:none;z-index:-1;"></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section>
+  <p class="section-eyebrow reveal" style="text-align:center;">The numbers</p>
+  <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Accountability<br/>actually works.</h2>
+  <div class="stats-row">
+    <div class="stat-box reveal"><div class="stat-number">65%</div><div class="stat-label">Higher goal achievement with social accountability vs going solo</div></div>
+    <div class="stat-box reveal reveal-delay-1"><div class="stat-number">3x</div><div class="stat-label">More likely to keep a habit when your friends can see your progress</div></div>
+    <div class="stat-box reveal reveal-delay-2"><div class="stat-number">21d</div><div class="stat-label">Average streak length for users with an active accountability circle</div></div>
+    <div class="stat-box reveal reveal-delay-3"><div class="stat-number">£0</div><div class="stat-label">Cost to get started. Free tier forever, upgrade when you're ready.</div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section id="pricing" class="premium-section" style="max-width:100%;padding:80px 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <p class="section-eyebrow reveal" style="text-align:center;">Pricing</p>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Simple. Honest.<br/>No tricks.</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <div class="plan-name">Free</div>
+        <div class="plan-price">£0 <span>/ forever</span></div>
+        <div class="plan-desc">Everything you need to get started.</div>
+        <ul class="plan-features">
+          <li>Up to 2 accountability circles</li>
+          <li>Daily proof posting</li>
+          <li>AI verification on photos</li>
+          <li>Streak tracking</li>
+          <li>Reaction emojis</li>
+          <li>6 preset identities</li>
+          <li class="locked">Shared group targets</li>
+          <li class="locked">Circle chat</li>
+          <li class="locked">Custom identities</li>
+          <li class="locked">Streak protection</li>
+        </ul>
+        <button class="plan-btn free" onclick="document.getElementById('email-1').focus();window.scrollTo({top:0,behavior:'smooth'})">Join waitlist →</button>
+      </div>
+      <div class="pricing-card featured reveal reveal-delay-1">
+        <div class="plan-badge">MOST POPULAR</div>
+        <div class="plan-name">Premium</div>
+        <div class="plan-price">£3.99 <span>/ month</span></div>
+        <div class="plan-desc">For serious accountability. Everything in Free, plus:</div>
+        <ul class="plan-features">
+          <li>Unlimited circles</li>
+          <li>Shared group targets + leaderboard</li>
+          <li>Circle chat for your group</li>
+          <li>Custom identity creator</li>
+          <li>Advanced AI verification</li>
+          <li>Streak protection (1x/month)</li>
+          <li>Group progress tracking</li>
+          <li>Early access to new features</li>
+        </ul>
+        <button class="plan-btn premium-btn" onclick="document.getElementById('email-1').focus();window.scrollTo({top:0,behavior:'smooth'})">Get early access →</button>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--muted2);margin-top:20px;">Cancel anytime. No long-term commitment. Annual plan available at launch (save 37%).</p>
+  </div>
+</section>
+<div class="divider"></div>
+<section>
+  <p class="section-eyebrow reveal" style="text-align:center;">Early feedback</p>
+  <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">People get it<br/>immediately.</h2>
+  <div class="testimonials">
+    <div class="testimonial reveal"><div class="t-stars">★★★★★</div><p class="t-quote">"I've tried every habit app. The difference with Accountable is my friends can actually see when I haven't posted. That social pressure is real."</p><div class="t-author"><div class="t-avatar" style="background:#0d1f33;color:#4d9fff;">E</div><div><div class="t-name">Emma R.</div><div class="t-handle">Gym Squad · 15 day streak</div></div></div></div>
+    <div class="testimonial reveal reveal-delay-1"><div class="t-stars">★★★★★</div><p class="t-quote">"The shared circle target completely changed our dynamic. We went from chatting about going to the gym to actually going. Every single day."</p><div class="t-author"><div class="t-avatar" style="background:#2a0017;color:#ff4d9f;">S</div><div><div class="t-name">Sofia M.</div><div class="t-handle">Summer Shred Squad · 21 day streak</div></div></div></div>
+    <div class="testimonial reveal reveal-delay-2"><div class="t-stars">★★★★★</div><p class="t-quote">"I set up a Founder Grind circle with my business partner. Shipping something every single day felt impossible alone. Together it's just what we do now."</p><div class="t-author"><div class="t-avatar" style="background:#1a0020;color:#a04dff;">R</div><div><div class="t-name">Ryan T.</div><div class="t-handle">Founder Grind · 34 day streak</div></div></div></div>
+  </div>
+</section>
+<div class="divider"></div>
+<div class="final-cta">
+  <h2>Your friends are<br/>already <span class="green">posting proof.</span></h2>
+  <p>Don't be the only one missing today.</p>
+  <div class="final-form" id="form-2">
+    <input type="email" class="email-input" placeholder="your@email.com" id="email-2" />
+    <button class="join-btn" onclick="handleSignup('email-2','form-2','success-2')">Join →</button>
+  </div>
+  <div class="success-message" id="success-2">✓ You're on the list! We'll be in touch soon.</div>
+</div>
+<footer>
+  <a href="#" class="logo" style="font-size:16px;">Accountable<span style="color:var(--green);">.</span></a>
+  <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Contact</a><a href="#">TikTok</a></div>
+  <p style="color:var(--muted);">© 2025 Accountable. All rights reserved.</p>
+</footer>
+<script>
+let signupCount = 847;
+function handleSignup(inputId, formId, successId) {
+  const email = document.getElementById(inputId).value.trim();
+  if (!email || !email.includes('@')) {
+    const input = document.getElementById(inputId);
+    input.style.borderColor = 'var(--red)';
+    input.placeholder = 'Please enter a valid email';
+    setTimeout(() => { input.style.borderColor = ''; input.placeholder = 'your@email.com'; }, 2000);
+    return;
+  }
+  document.getElementById(formId).style.display = 'none';
+  document.getElementById(successId).classList.add('show');
+  signupCount++;
+  document.querySelectorAll('.counter-num').forEach(el => animateCounter(el, signupCount));
+}
+function animateCounter(el, target) {
+  const start = parseInt(el.textContent) || 0;
+  const duration = 1200;
+  const startTime = performance.now();
+  function update(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(start + (target - start) * eased);
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+window.addEventListener('load', () => {
+  setTimeout(() => { document.querySelectorAll('.counter-num').forEach(el => animateCounter(el, parseInt(el.dataset.target))); }, 800);
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const tickerItems = [
+  { initial:'E', color:'#4d9fff', bg:'#0d1f33', name:'Emma', action:'posted gym proof', badge:'✓ Verified', streak:'🔥 15d' },
+  { initial:'J', color:'#ff8c4d', bg:'#2a1200', name:'Jake', action:'checked in · meal photo', badge:'✓ Verified', streak:'🔥 9d' },
+  { initial:'S', color:'#ff4d9f', bg:'#2a0017', name:'Sofia', action:'completed morning run', badge:'✓ Verified', streak:'🔥 21d' },
+  { initial:'M', color:'#b8f55a', bg:'#0d1a00', name:'Marcus', action:'shipped a product feature', badge:'✓ Verified', streak:'🔥 7d' },
+  { initial:'R', color:'#a04dff', bg:'#1a0020', name:'Rachel', action:'no-spend day logged', badge:'✓ Verified', streak:'🔥 34d' },
+  { initial:'T', color:'#4dffd6', bg:'#002a20', name:'Tom', action:'posted study desk photo', badge:'✓ Verified', streak:'🔥 12d' },
+  { initial:'A', color:'#fff44d', bg:'#2a2a00', name:'Anna', action:'healthy meal logged', badge:'✓ Verified', streak:'🔥 5d' },
+  { initial:'K', color:'#ff6b6b', bg:'#2a0000', name:'Kira', action:'morning workout complete', badge:'✓ Verified', streak:'🔥 18d' },
+];
+function buildTicker() {
+  const track = document.getElementById('ticker');
+  [...tickerItems, ...tickerItems].forEach(item => {
+    const div = document.createElement('div');
+    div.className = 'ticker-item';
+    div.innerHTML = `<div style="width:28px;height:28px;border-radius:50%;background:${item.bg};color:${item.color};display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">${item.initial}</div><div class="t-text"><strong style="color:#f0ede6;font-weight:600;">${item.name}</strong> ${item.action}</div><div class="t-badge">${item.badge}</div><div style="font-size:12px;font-weight:700;color:#ffb800;">${item.streak}</div>`;
+    track.appendChild(div);
+  });
+}
+buildTicker();
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
