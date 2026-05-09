@@ -169,10 +169,11 @@
   <div class="hero-eyebrow"><div class="pulse-dot"></div>Now accepting early access signups</div>
   <h1>Stop making<br/><span class="green">excuses.</span><br/><span class="dim">Start making proof.</span></h1>
   <p class="hero-sub">Accountable is the social network where your content is your progress. Post proof, build streaks, keep your circle honest.</p>
-  <div class="waitlist-form" id="form-1">
-    <input type="email" class="email-input" placeholder="your@email.com" id="email-1" />
-    <button class="join-btn" onclick="handleSignup('email-1')">Join waitlist</button>
-  </div>
+  <form name="waitlist" method="POST" data-netlify="true" class="waitlist-form" id="form-1">
+    <input type="hidden" name="form-name" value="waitlist" />
+    <input type="email" name="email" class="email-input" placeholder="your@email.com" id="email-1" required />
+    <button type="submit" class="join-btn">Join waitlist →</button>
+  </form>
   <div class="success-message" id="success-1">You are on the list! We will be in touch soon.</div>
   <p class="form-note">No spam. Just your early access invite when we launch.</p>
   <div class="waitlist-count">
@@ -301,10 +302,11 @@
 <div class="final-cta">
   <h2>Your friends are<br/>already <span class="green">posting proof.</span></h2>
   <p>Do not be the only one missing today.</p>
-  <div class="final-form" id="form-2">
-    <input type="email" class="email-input" placeholder="your@email.com" id="email-2" />
-<a href="https://us19.list-manage.com/subscribe?u=6fd097f7093a0db7ebc018c91&id=700f3abb95" class="join-btn" style="text-decoration:none;">Join waitlist</a>
-  </div>
+  <form name="waitlist" method="POST" data-netlify="true" class="final-form" id="form-2">
+    <input type="hidden" name="form-name" value="waitlist" />
+    <input type="email" name="email" class="email-input" placeholder="your@email.com" required />
+    <button type="submit" class="join-btn">Join →</button>
+  </form>
   <div class="success-message" id="success-2">You are on the list! We will be in touch soon.</div>
 </div>
 <footer>
