@@ -149,8 +149,6 @@
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
-  .success-message { display: none; align-items: center; gap: 10px; background: rgba(184,245,90,0.1); border: 1px solid rgba(184,245,90,0.3); border-radius: 14px; padding: 16px 24px; font-size: 15px; color: var(--green); font-weight: 500; max-width: 480px; margin: 0 auto; }
-  .success-message.show { display: flex; }
   .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 auto; }
 </style>
 </head>
@@ -169,12 +167,11 @@
   <div class="hero-eyebrow"><div class="pulse-dot"></div>Now accepting early access signups</div>
   <h1>Stop making<br/><span class="green">excuses.</span><br/><span class="dim">Start making proof.</span></h1>
   <p class="hero-sub">Accountable is the social network where your content is your progress. Post proof, build streaks, keep your circle honest.</p>
-  <form name="waitlist" method="POST" data-netlify="true" class="waitlist-form" id="form-1">
+  <form name="waitlist" method="POST" data-netlify="true" action="/thanks.html" class="waitlist-form">
     <input type="hidden" name="form-name" value="waitlist" />
-    <input type="email" name="email" class="email-input" placeholder="your@email.com" id="email-1" required />
-    <button type="submit" class="join-btn">Join waitlist →</button>
+    <input type="email" name="email" class="email-input" placeholder="your@email.com" required />
+    <button type="submit" class="join-btn">Join waitlist</button>
   </form>
-  <div class="success-message" id="success-1">You are on the list! We will be in touch soon.</div>
   <p class="form-note">No spam. Just your early access invite when we launch.</p>
   <div class="waitlist-count">
     <p class="count-text">Be one of the <strong>first 1,000</strong> to get early access</p>
@@ -264,7 +261,7 @@
           <li class="locked">Custom identities</li>
           <li class="locked">Streak protection</li>
         </ul>
-        <button class="plan-btn free" onclick="document.getElementById('email-1').focus();window.scrollTo({top:0,behavior:'smooth'})">Join waitlist</button>
+        <button class="plan-btn free" onclick="window.scrollTo({top:0,behavior:'smooth'})">Join waitlist</button>
       </div>
       <div class="pricing-card featured reveal reveal-delay-1">
         <div class="plan-badge">MOST POPULAR</div>
@@ -281,7 +278,7 @@
           <li>Group progress tracking</li>
           <li>Early access to new features</li>
         </ul>
-        <button class="plan-btn premium-btn" onclick="document.getElementById('email-1').focus();window.scrollTo({top:0,behavior:'smooth'})">Get early access</button>
+        <button class="plan-btn premium-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">Get early access</button>
       </div>
     </div>
     <p style="text-align:center;font-size:13px;color:var(--muted2);margin-top:20px;">Cancel anytime. No long-term commitment. Annual plan available at launch.</p>
@@ -302,12 +299,11 @@
 <div class="final-cta">
   <h2>Your friends are<br/>already <span class="green">posting proof.</span></h2>
   <p>Do not be the only one missing today.</p>
-  <form name="waitlist" method="POST" data-netlify="true" class="final-form" id="form-2">
+  <form name="waitlist" method="POST" data-netlify="true" action="/thanks.html" class="final-form">
     <input type="hidden" name="form-name" value="waitlist" />
     <input type="email" name="email" class="email-input" placeholder="your@email.com" required />
-    <button type="submit" class="join-btn">Join →</button>
+    <button type="submit" class="join-btn">Join</button>
   </form>
-  <div class="success-message" id="success-2">You are on the list! We will be in touch soon.</div>
 </div>
 <footer>
   <a href="#" class="logo" style="font-size:16px;">Accountable<span style="color:var(--green);">.</span></a>
@@ -315,21 +311,6 @@
   <p style="color:var(--muted);">2025 Accountable. All rights reserved.</p>
 </footer>
 <script>
-function handleSignup(inputId) {
-  var email = document.getElementById(inputId).value.trim();
-  if (!email || email.indexOf('@') === -1) {
-    var input = document.getElementById(inputId);
-    input.style.borderColor = '#ff4d4d';
-    input.placeholder = 'Please enter a valid email';
-    setTimeout(function() {
-      input.style.borderColor = '';
-      input.placeholder = 'your@email.com';
-    }, 2000);
-    return;
-  }
-  var url = 'https://us19.list-manage.com/subscribe?u=6fd097f7093a0db7ebc018c91&id=700f3abb95&EMAIL=' + encodeURIComponent(email);
-  window.location.href = url;
-}
 const observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
     if (entry.isIntersecting) entry.target.classList.add('visible');
